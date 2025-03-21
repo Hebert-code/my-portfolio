@@ -5,7 +5,7 @@ import Footerp from "./components/Footerp"
 import Home from "./components/Home"
 import Navbar from "./components/Navbar"
 import Projects from "./components/Projects"
-import Services from "./components/services"
+import Services from "./components/Services"
 import Skills from "./components/Skins"
 
 function App() {
