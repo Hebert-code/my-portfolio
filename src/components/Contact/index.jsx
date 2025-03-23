@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef  } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faPhone, faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import { socialLinks } from "../../data/socialLinks";
@@ -9,21 +9,34 @@ import emailjs from "emailjs-com";
 
 const Contact = () => {
     const [messageStatus, setMessageStatus] = useState(null); // Estado para exibir mensagem de feedback
+    const form = useRef(null); // Referência para o formulário
 
     const sendEmail = (e) => {
-        e.preventDefault(); // Previne o comportamento padrão do formulário
-
-        emailjs.sendForm("service_atte6xv", "template_pxqn2vs", e.target, "7q2TTh_KAlVKd9mL1")
-            .then((result) => {
-                console.log("E-mail enviado com sucesso:", result.text);
-                setMessageStatus({ text: "Mensagem enviada com sucesso!", type: "success" });
-                e.target.reset(); // Reseta o formulário após o envio
-            })
-            .catch((error) => {
-                console.error("Erro ao enviar e-mail:", error.text);
-                setMessageStatus({ text: "Erro ao enviar mensagem. Tente novamente.", type: "error" });
-            });
+        e.preventDefault(); 
+    
+        // Verificar os dados antes de enviar
+        const formData = new FormData(form.current);
+        for (const pair of formData.entries()) {
+            console.log(pair[0] + ": " + pair[1]);
+        }
+    
+        emailjs.sendForm(
+            "service_atte6xv",
+            "template_pxqn2vs",
+            form.current,
+            "7q2TTh_KAlVKd9mL1"
+        )
+        .then((response) => {
+            console.log("E-mail enviado com sucesso!", response);
+            setMessageStatus({ type: "success", text: "Mensagem enviada com sucesso!" });
+            form.current.reset(); 
+        })
+        .catch((error) => {
+            console.error("Erro ao enviar e-mail:", error);
+            setMessageStatus({ type: "error", text: "Erro ao enviar a mensagem. Tente novamente." });
+        });
     };
+    
 
     return (
         <section id="contact" className="py-16 bg-gradient-to-r from-[#17203a] to-[#0b1120] text-white scroll-mt-26">
@@ -32,7 +45,7 @@ const Contact = () => {
             <div className="container mx-auto px-4 md:px-16 flex flex-col md:flex-row gap-12 sm:w-full">
                 <div className="w-full md:w-1/2 bg-gray-900 p-8 rounded-lg shadow-lg">
                     <h3 className="text-3xl font-semibold mb-6 text-center md:text-left">Diga Olá</h3>
-                    <form onSubmit={sendEmail}>
+                    <form ref={form} onSubmit={sendEmail}>
                         <InputField 
                             type="text" 
                             placeholder="Seu Nome" 
