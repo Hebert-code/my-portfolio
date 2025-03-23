@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
-import logo from "../../assets/img/principais/image.jpg";
+import logo from "../../assets/img/principais/logo.jpg";
 import Buttom from "../common/Buttom";
 
 const menuItems = [
@@ -47,10 +47,10 @@ const Navbar = () => {
     <nav className="fixed top-0 w-full bg-gradient-to-l from-[#0b1120] to-[#17203a] text-white shadow-lg z-50 py-5">
       <div className="max-w-full mx-auto flex justify-between items-center px-6 xl:px-8 h-16">
         
-        <a href="#" className="flex items-center space-x-3">
-          <img src={logo} alt="Logo" className="w-10 h-10 rounded-full" />
+        <div className="flex items-center space-x-3">
+          <img src={logo} alt="Logo" className="w-13 h-13 rounded-full " />
           <h1 className="text-lg font-semibold tracking-wide">Hebert</h1>
-        </a>
+        </div>
 
         <ul className="hidden xl:flex space-x-8">
           {menuItems.map((item) => (

@@ -1,4 +1,4 @@
-import HebertImage from '../../assets/img/principais/image.jpg';
+import HebertImage from '../../assets/img/principais/img_2.jpg';
 import Buttom from '../common/Buttom';
 import SectionTitle from '../common/SectionTitle';
 import { personalInfo } from "../../data/personalInfo";

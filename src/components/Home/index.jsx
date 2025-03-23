@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { socialLinks } from "../../data/socialLinks";
-import HebertImage from '../../assets/img/principais/image.jpg';
+import HebertImage from '../../assets/img/principais/img_1.jpg';
 import Buttom from "../common/Buttom";
 
 const Home = () => {
