@@ -85,7 +85,7 @@ const Navbar = () => {
       </div>
 
       {menuAberto && (
-        <div className="xl:hidden bg-gradient-to-l from-[#0b1120] to-[#17203a] w-full py-4 absolute top-23 left-0 menu-container">
+        <div className="xl:hidden bg-[#17203a] w-full py-4 absolute top-23 left-0 menu-container">
           <ul className="flex flex-col space-y-6 items-center">
             {menuItems.map((item) => (
               <li key={item.id}>

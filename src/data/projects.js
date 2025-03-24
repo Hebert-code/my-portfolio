@@ -2,7 +2,7 @@ import ConstructManage from "../assets/img/projetos/ConstrucManager.png";
 import habitrack from "../assets/img/projetos/habitrack.jpg";
 import PollenVision from "../assets/img/projetos/PollenVision.png";
 import Tradutor from "../assets/img/projetos/Tradutor.png";
-import CiebRedação from "../assets/img/projetos/Tradutor.png";
+import CiebRedação from "../assets/img/projetos/Cieb.jpg";
 
 export const projects = [
   { 
