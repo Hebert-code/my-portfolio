@@ -2,6 +2,10 @@
 
 Este é o meu portfólio digital, desenvolvido para apresentar minhas habilidades, projetos e experiências na área de tecnologia. Busquei criar um design moderno, responsivo e funcional, garantindo uma navegação intuitiva e agradável.
 
+<p align="center">
+    <img src="https://github.com/user-attachments/assets/dd7ae340-26aa-4b00-a0ac-16d180305ffb" width="1000px">
+</p>
+
 ## 🛠️ Tecnologias Utilizadas  
 - **ReactJS** para a estrutura do front-end  
 - **Tailwind CSS** para estilização eficiente e responsiva  
