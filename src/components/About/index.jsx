@@ -1,5 +1,4 @@
 import HebertImage from '../../assets/img/principais/img_2.jpg';
-import Buttom from '../common/Buttom';
 import SectionTitle from '../common/SectionTitle';
 import { personalInfo } from "../../data/personalInfo";
 
@@ -29,7 +28,7 @@ const About = () => {
                         Desenvolvedor de Software
                     </h4>
                     <p className="text-gray-300 leading-relaxed mb-6 text-base md:text-lg xl:text-[16px] 2xl:text-lg text-justify">
-                        Sou um jovem que venho do interior da Bahia, apaixonado por tecnologia e inovação. Gosto de resolver problemas e desafios do mundo real utilizando meu conhecimento. E, mesmo quando não tenho todas as respostas, corro atrás, sempre buscando evoluir e ajudar as pessoas.
+                        Sou um entusiasta da tecnologia e da inovação, vindo do interior da Bahia, movido pela curiosidade e pela vontade de transformar desafios em soluções. Minha paixão está em resolver problemas do mundo real por meio da tecnologia, sempre aprendendo, evoluindo e buscando impactar positivamente a vida das pessoas. Mesmo quando não tenho todas as respostas, persisto, estudo e encontro caminhos para fazer a diferença.
                     </p>
 
                     <ul className="text-left inline-block space-y-3 text-gray-400 text-sm md:text-base xl:text-sm 2xl:text-[16px]">
@@ -44,7 +43,7 @@ const About = () => {
                         <a
                             href="/Hebert.pdf"
                             download
-                            className="bg-dourado-texto text-backgroud-buttom py-2 px-6 rounded-full text-xl font-bold transition-all duration-300 transform hover:scale-105 hover:bg-dourado-texto-dark"
+                            className="bg-dourado-texto text-backgroud-buttom py-2 px-6 rounded-full text-xl font-bold transition-all duration-300 transform hover:scale-105 hover:bg-[#e0a931]"
                         >
                             Baixar CV
                         </a>

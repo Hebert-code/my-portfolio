@@ -1,12 +1,18 @@
-# React + Vite
+# 🚀 Meu Portfólio   
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este é o meu portfólio digital, desenvolvido para apresentar minhas habilidades, projetos e experiências na área de tecnologia. Busquei criar um design moderno, responsivo e funcional, garantindo uma navegação intuitiva e agradável.
 
-Currently, two official plugins are available:
+## 🛠️ Tecnologias Utilizadas  
+- **ReactJS** para a estrutura do front-end  
+- **Tailwind CSS** para estilização eficiente e responsiva  
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📌 Funcionalidades  
+- Apresentação dos meus projetos com detalhes sobre tecnologias e desafios  
+- Seção sobre mim, destacando minha trajetória e interesses  
+- Contato direto para conexões profissionais  
 
-## Expanding the ESLint configuration
+## 🚀 Experiência do Usuário  
+O foco do portfólio é oferecer uma experiência fluida e atrativa, destacando meu trabalho de forma dinâmica e envolvente.  
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🔗 Acesse o Portfólio  
+[🔗 Acesse aqui](https://my-portfo-git-583ded-hebert-henrique-barboza-de-britos-projects.vercel.app/#)  

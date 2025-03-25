@@ -5,7 +5,7 @@ export const experiences = [
   {
     year: "2024 - Atual",
     title: "Membro da Diretoria de Presidência",
-    company: "Inova Júnior",
+    company: "Inove Júnior",
     description:
       "Atuei na liderança estratégica da empresa júnior, gerenciando projetos e auxiliando no desenvolvimento organizacional, além de contribuir para a formação de novos membros.",
     image: logo_inove,
