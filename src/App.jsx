@@ -5,23 +5,24 @@ import Footerp from "./components/Footerp"
 import Home from "./components/Home"
 import Navbar from "./components/Navbar"
 import Projects from "./components/Projects"
-import Services from "./components/Services"
 import Skills from "./components/Skins"
+import { ThemeProvider } from "./contexts/ThemeContext"
+import { LanguageProvider } from "./contexts/LanguageContext"
 
 function App() {
-
   return (
-    <>
-      <Navbar/>
-      <Home/>
-      <About/>
-      <Skills/>
-      <Experience/>
-      <Projects/>
-      <Services/>
-      <Contact/>
-      <Footerp/>
-    </>
+    <ThemeProvider>
+      <LanguageProvider>
+        <Navbar/>
+        <Home/>
+        <About/>
+        <Skills/>
+        <Experience/>
+        <Projects/>
+        <Contact/>
+        <Footerp/>
+      </LanguageProvider>
+    </ThemeProvider>
   )
 }
 

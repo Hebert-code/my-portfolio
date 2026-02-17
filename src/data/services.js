@@ -5,31 +5,31 @@ import serviço_4 from "../assets/img/serviços/serviço_4.jpg"
 
 export const services = [
     {
-        title: "Desenvolvimento Web",
-        description: "Criação de websites modernos e responsivos utilizando as mais recentes tecnologias como React, Next.js, e muito mais.",
+        title: "Desenvolvimento Web Fullstack",
+        description: "Criação de aplicações web escaláveis com arquiteturas modernas usando React, Laravel, Django, Node.js, APIs RESTful e GraphQL.",
         icon: "🌐", 
         image: serviço_1, 
         rating: 5
     },
     {
-        title: "Desenvolvimento de Aplicativos",
-        description: "Criação de aplicativos móveis para Android e iOS utilizando React Native, SwiftUI e outras tecnologias.",
+        title: "Desenvolvimento Mobile",
+        description: "Desenvolvimento de aplicativos móveis multiplataforma com React Native e Swift/SwiftUI, com interfaces responsivas e integração de APIs.",
         icon: "📱",
         image: serviço_2, 
         rating: 4.5
     },
     {
-        title: "Protótipos Interativos",
-        description: "Criação de protótipos interativos de alta fidelidade para testar e validar interfaces antes da implementação final, garantindo uma melhor experiência do usuário.",
-        icon: "🎨",
+        title: "IA Generativa & Automação",
+        description: "Pesquisa e implementação de soluções com LLMs (GPT, Gemini, DeepSeek), técnicas de RAG e Fine-tuning para automação de processos complexos.",
+        icon: "🤖",
         image: serviço_3, 
-        rating: 5
+        rating: 4.5
     },
     {
-        title: "Automação",
-        description: "Soluções inteligentes para automação de processos, integração de sistemas e otimização de fluxos de trabalho.",
+        title: "Infraestrutura & DevOps",
+        description: "Containerização com Docker, gerenciamento de ambientes de desenvolvimento e produção, deploy e CI/CD.",
         icon: "⚙️",
         image: serviço_4,
-        rating: 4.7
+        rating: 4
     }
 ];

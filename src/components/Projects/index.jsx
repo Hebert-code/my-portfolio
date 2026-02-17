@@ -1,94 +1,90 @@
-import { FaArrowRight} from "react-icons/fa";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/pagination";
-import { Pagination } from "swiper/modules";
-import { useState, useRef } from "react";
-import { projects } from "../../data/projects";
-import ProjectDetails from "../ProjectDetails"; 
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import SectionTitle from "../common/SectionTitle";
+import { projects } from "../../data/projects";
+import ProjectDetails from "../ProjectDetails";
 import SwiperNavigation from "../common/SwiperNavigation";
-
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import { Pagination } from 'swiper/modules';
+import { useTheme } from "../../contexts/ThemeContext";
+import { useLanguage } from "../../contexts/LanguageContext";
 
 const Projects = () => {
-  const [expandedProject, setExpandedProject] = useState(null);
-  const swiperRef = useRef(null);
-  const [zoomedImage, setZoomedImage] = useState(null);
+    const [activeProject, setActiveProject] = useState(null);
+    const { theme } = useTheme();
+    const { t } = useLanguage();
+    const isDark = theme === "dark";
 
+    return (
+        <section id="projects" className="relative bg-fundo py-24 font-grotesk scroll-mt-26 overflow-hidden">
 
-  const handlePrev = () => swiperRef.current?.slidePrev();
-  const handleNext = () => swiperRef.current?.slideNext();
+            <div className="absolute top-0 left-0 right-0 section-divider" />
 
-  return (
-    <section id="projects" className=" scroll-mt-26 block bg-gradient-to-br from-[#07233b] to-[#040c16] py-16 font-grotesk">
-      
-      <SectionTitle title={"PROJETOS"}/>
-      
-      <div className="container mx-auto px-6 xl:px-12 relative">
-        <Swiper 
-          slidesPerView={1}
-          spaceBetween={30} 
-          loop={true}
-          pagination={{ clickable: true }} 
-          modules={[Pagination]} 
-          className="mySwiper"
-          onSwiper={(swiper) => (swiperRef.current = swiper)}
-          breakpoints={{
-            640: { slidesPerView: 1 },
-            768: { slidesPerView: 2 },
-            1024: { slidesPerView: 2 },
-            1280: { slidesPerView: 3 },
-          }}
-        >
-          {projects.map((project, index) => (
-            <SwiperSlide key={index}>
-              <div className="bg-white text-black rounded-2xl overflow-hidden shadow-lg relative group max-w-xs md:max-w-md lg:max-w-lg xl:max-w-xl mx-auto">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-60 object-cover p-2 rounded-4xl transition-transform duration-300 group-hover:opacity-80 cursor-pointer"
-                  onClick={() => setZoomedImage(project.image)}
-                />
-                <div className="p-4 flex justify-between items-center">
-                  <div className="p-4">
-                    <h3 className="text-lg font-bold">{project.title}</h3>
-                    <p className="text-gray-600">{project.category}</p>
-                  </div>
-                  <div className="flex justify-end">
-                    <button 
-                      className="bg-dourado-texto text-white p-3 rounded-full transition-all duration-300 transform hover:scale-150 cursor-pointer"
-                      onClick={() => setExpandedProject(project)}
-                    >
-                      <FaArrowRight />
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
+            <SectionTitle title={t("projects.title")} />
 
-        <SwiperNavigation onPrev={handlePrev} onNext={handleNext}/>
+            <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-10">
+                <Swiper
+                    modules={[Pagination]}
+                    spaceBetween={24}
+                    slidesPerView={1}
+                    pagination={{ clickable: true }}
+                    breakpoints={{
+                        640: { slidesPerView: 2 },
+                        1024: { slidesPerView: 3 },
+                    }}
+                    className="mySwiper pb-14"
+                >
+                    {projects.map((project, index) => (
+                        <SwiperSlide key={index}>
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: index * 0.1 }}
+                                whileHover={{ y: -6 }}
+                                className="glass-card glass-card-hover rounded-2xl overflow-hidden group cursor-pointer h-full"
+                                onClick={() => setActiveProject(project)}
+                            >
+                                <div className="relative h-48 overflow-hidden">
+                                    <img
+                                        src={project.image}
+                                        alt={project.title}
+                                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                    />
+                                    <div className={`absolute inset-0 bg-gradient-to-t ${isDark ? "from-[#0a0f1a]" : "from-white"} via-transparent to-transparent`} />
+                                    <span className="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-dourado-texto/10 text-dourado-texto text-[10px] font-semibold border border-dourado-texto/20 backdrop-blur-sm">
+                                        {project.category}
+                                    </span>
+                                </div>
+                                <div className="p-5">
+                                    <h3 className={`text-lg font-bold mb-2 ${isDark ? "text-white" : "text-slate-800"}`}>{project.title}</h3>
+                                    <p className={`text-sm leading-relaxed line-clamp-2 mb-3 ${isDark ? "text-slate-400" : "text-slate-600"}`}>
+                                        {project.description}
+                                    </p>
+                                    <div className="flex flex-wrap gap-1.5">
+                                        {project.languages.split(",").map((lang, i) => (
+                                            <span key={i} className={`px-2 py-0.5 rounded-md ${isDark ? "bg-white/5 text-slate-400 border-white/5" : "bg-black/5 text-slate-500 border-black/5"} text-[10px] border`}>
+                                                {lang.trim()}
+                                            </span>
+                                        ))}
+                                    </div>
+                                </div>
+                            </motion.div>
+                        </SwiperSlide>
+                    ))}
+                    <SwiperNavigation />
+                </Swiper>
+            </div>
 
-      </div>
-
-      {expandedProject && (
-        <ProjectDetails 
-          project={expandedProject} 
-          close={() => setExpandedProject(null)}
-        />
-      )}
-
-      {zoomedImage && (
-        <div 
-          className="fixed inset-0 backdrop-blur-lg bg-black/50 flex justify-center items-center z-50"
-          onClick={() => setZoomedImage(null)}
-        >
-          <img src={zoomedImage} alt="Zoomed" className="max-w-3/4 max-h-3/4 rounded-lg shadow-lg" />
-        </div>
-      )}
-    </section>
-  );
+            <AnimatePresence>
+                {activeProject && (
+                    <ProjectDetails project={activeProject} close={() => setActiveProject(null)} />
+                )}
+            </AnimatePresence>
+        </section>
+    );
 };
 
 export default Projects;

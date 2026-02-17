@@ -1,21 +1,23 @@
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
-const SwiperNavigation = ({ onPrev, onNext  }) => {
+const SwiperNavigation = ({ onPrev, onNext }) => {
   return (
     <>
-      <div className="absolute top-1/2 left-0 transform -translate-y-1/2 p-2 z-10">
-        <FaChevronLeft
-          className="text-white text-3xl cursor-pointer opacity-80 hover:opacity-100 transition duration-300"
-          onClick={onPrev}
-        />
-      </div>
+      <button
+        onClick={onPrev}
+        className="absolute top-1/2 -left-2 xl:-left-6 transform -translate-y-1/2 z-10 w-10 h-10 rounded-full glass-card flex items-center justify-center text-white hover:text-dourado-texto hover:border-dourado-texto/30 transition-all duration-300 cursor-pointer"
+        aria-label="Anterior"
+      >
+        <FaChevronLeft className="text-sm" />
+      </button>
 
-      <div className="absolute top-1/2 right-0 transform -translate-y-1/2 p-2 z-10">
-        <FaChevronRight
-          className="text-white text-3xl cursor-pointer opacity-80 hover:opacity-100 transition duration-300"
-          onClick={onNext}
-        />
-      </div>
+      <button
+        onClick={onNext}
+        className="absolute top-1/2 -right-2 xl:-right-6 transform -translate-y-1/2 z-10 w-10 h-10 rounded-full glass-card flex items-center justify-center text-white hover:text-dourado-texto hover:border-dourado-texto/30 transition-all duration-300 cursor-pointer"
+        aria-label="Próximo"
+      >
+        <FaChevronRight className="text-sm" />
+      </button>
     </>
   );
 };

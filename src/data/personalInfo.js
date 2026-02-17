@@ -5,5 +5,7 @@ export const personalInfo = [
     { label: "Email", value: "hebert.hb.brito@gmail.com" },
     { label: "Naturalidade", value: "Jussara - BA" },
     { label: "Residindo", value: "Juazeiro - BA" },
-    { label: "Idioma", value: "Português, Brasil" },
+    { label: "Formação", value: "Eng. da Computação - UNIVASF" },
+    { label: "Idioma", value: "Português (Nativo), Inglês (Básico)" },
+    { label: "Disponibilidade", value: "Remoto / Presencial" },
 ];

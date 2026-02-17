@@ -1,11 +1,17 @@
-const Button = ({ Link, inf }) => {
+import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
+
+const Button = ({ Link, inf, className = "" }) => {
     return (
-        <a
+        <motion.a
             href={Link}
-            className="bg-dourado-texto text-backgroud-buttom py-2 px-6 rounded-full text-xl font-bold transition-all duration-300 transform hover:scale-105 hover:bg-dourado-texto-dark"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.97 }}
+            className={`group relative inline-flex items-center gap-2 bg-gradient-to-r from-dourado-texto to-amber-500 text-fundo-darker py-3 px-7 rounded-full text-base font-bold transition-all duration-300 shadow-lg shadow-dourado-texto/20 hover:shadow-dourado-texto/40 ${className}`}
         >
             {inf}
-        </a>
+            <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+        </motion.a>
     );
 };
 

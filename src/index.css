@@ -2,22 +2,279 @@
 @import "tailwindcss";
 
 @theme {
-  --color-dourado-texto: #f7c043;
-  --color-buttom: #fec544;
-  --color-fundo: #0f172a;
-  --color-texto-secundario: #A9ADB8;
-  --color-backgroud-buttom: #101624;
-  --color-borda-buttom: #232933;
-  --color-texto-buttom: #070d1b;
+  --color-dourado-texto: #fbbf24;
+  --color-dourado-hover: #f59e0b;
+  --color-buttom: #fbbf24;
+  --color-fundo: #0a0f1a;
+  --color-fundo-darker: #050810;
+  --color-fundo-card: #111827;
+  --color-texto-secundario: #94a3b8;
+  --color-backgroud-buttom: #0f172a;
+  --color-borda-buttom: #1e293b;
+  --color-texto-buttom: #0f172a;
   --font-grotesk: "Space Grotesk", sans-serif;
 }
 
-body {
-    @apply bg-fundo text-texto-secundario text-[16px] font-normal overflow-x-hidden leading-relaxed m-0 font-grotesk  
+html {
+  scroll-behavior: smooth;
 }
 
+body {
+    @apply bg-fundo text-slate-300 text-[16px] font-normal overflow-x-hidden leading-relaxed m-0 font-grotesk selection:bg-dourado-texto/30 selection:text-dourado-texto;
+}
 
-  .mySwiper .swiper-pagination-bullet-active {
-    background-color: #f7c043 !important; /* Dourado mais escuro para destaque */
-  }
-  
+/* ═══════════════════════════ GLASSMORPHISM ═══════════════════════════ */
+.glass {
+  @apply bg-slate-900/30 backdrop-blur-xl border border-white/10 shadow-lg;
+}
+
+.glass-card {
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.glass-card-hover {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.glass-card-hover:hover {
+  border-color: rgba(251, 191, 36, 0.3);
+  box-shadow: 0 8px 32px rgba(251, 191, 36, 0.1), 0 0 60px rgba(251, 191, 36, 0.05);
+  transform: translateY(-4px);
+}
+
+/* ═══════════════════════════ GRADIENTS ═══════════════════════════ */
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-white to-slate-400;
+}
+
+.text-gradient-gold {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-dourado-texto to-amber-500;
+}
+
+.gradient-border {
+  position: relative;
+}
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(251, 191, 36, 0.5), transparent 50%, rgba(251, 191, 36, 0.2));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* ═══════════════════════════ GLOW EFFECTS ═══════════════════════════ */
+.glow-gold {
+  box-shadow: 0 0 20px rgba(251, 191, 36, 0.15), 0 0 40px rgba(251, 191, 36, 0.05);
+}
+
+.glow-gold-hover:hover {
+  box-shadow: 0 0 30px rgba(251, 191, 36, 0.25), 0 0 60px rgba(251, 191, 36, 0.1);
+}
+
+/* ═══════════════════════════ ANIMATIONS ═══════════════════════════ */
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(2deg); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(251, 191, 36, 0.2); }
+  50% { box-shadow: 0 0 40px rgba(251, 191, 36, 0.4); }
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes blob {
+  0%, 100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+  50% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
+}
+
+@keyframes typewriter-cursor {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient-shift 4s ease infinite;
+}
+
+.animate-blob {
+  animation: blob 8s ease-in-out infinite;
+}
+
+/* ═══════════════════════════ HERO BACKGROUND ═══════════════════════════ */
+.hero-mesh {
+  position: relative;
+  overflow: hidden;
+}
+.hero-mesh::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at 20% 50%, rgba(251, 191, 36, 0.08) 0%, transparent 50%),
+              radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.06) 0%, transparent 50%),
+              radial-gradient(circle at 50% 80%, rgba(168, 85, 247, 0.04) 0%, transparent 50%);
+  animation: gradient-shift 15s ease infinite;
+  background-size: 200% 200%;
+  z-index: 0;
+}
+
+/* ═══════════════════════════ SWIPER ═══════════════════════════ */
+.mySwiper .swiper-pagination-bullet-active {
+  background-color: #fbbf24 !important;
+}
+.mySwiper .swiper-pagination-bullet {
+  background-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+/* ═══════════════════════════ SCROLLBAR ═══════════════════════════ */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0f1a;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-dourado-texto/30 rounded-full;
+}
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-dourado-texto/50;
+}
+
+/* ═══════════════════════════ INPUT FOCUS ═══════════════════════════ */
+.input-glow:focus {
+  border-color: rgba(251, 191, 36, 0.5);
+  box-shadow: 0 0 0 3px rgba(251, 191, 36, 0.1), 0 0 20px rgba(251, 191, 36, 0.05);
+}
+
+/* ═══════════════════════════ TIMELINE ═══════════════════════════ */
+.timeline-line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, transparent, rgba(251, 191, 36, 0.3), rgba(251, 191, 36, 0.5), rgba(251, 191, 36, 0.3), transparent);
+  transform: translateX(-50%);
+}
+
+.timeline-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #fbbf24, #f59e0b);
+  box-shadow: 0 0 20px rgba(251, 191, 36, 0.4);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+/* ═══════════════════════════ MISC ═══════════════════════════ */
+.section-divider {
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(251, 191, 36, 0.3), transparent);
+}
+
+/* ═══════════════════════════ LIGHT THEME ═══════════════════════════ */
+html.light {
+  --color-fundo: #f8fafc;
+  --color-fundo-darker: #f1f5f9;
+  --color-fundo-card: #ffffff;
+  --color-backgroud-buttom: #f8fafc;
+  --color-borda-buttom: #e2e8f0;
+  --color-texto-buttom: #1e293b;
+}
+
+html.light body {
+  @apply text-slate-700;
+}
+
+/* Glass overrides */
+html.light .glass {
+  background: rgba(255, 255, 255, 0.7);
+  border-color: rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+}
+
+html.light .glass-card {
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+}
+
+html.light .glass-card-hover:hover {
+  border-color: rgba(251, 191, 36, 0.4);
+  box-shadow: 0 8px 32px rgba(251, 191, 36, 0.12), 0 0 40px rgba(251, 191, 36, 0.06);
+}
+
+/* Hero mesh */
+html.light .hero-mesh::before {
+  background: radial-gradient(circle at 20% 50%, rgba(251, 191, 36, 0.12) 0%, transparent 50%),
+              radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.08) 0%, transparent 50%),
+              radial-gradient(circle at 50% 80%, rgba(168, 85, 247, 0.06) 0%, transparent 50%);
+}
+
+/* Scrollbar */
+html.light ::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+html.light ::-webkit-scrollbar-thumb {
+  background: rgba(251, 191, 36, 0.4);
+}
+html.light ::-webkit-scrollbar-thumb:hover {
+  background: rgba(251, 191, 36, 0.6);
+}
+
+/* Text gradient */
+html.light .text-gradient {
+  @apply from-slate-800 to-slate-500;
+}
+
+/* Input glow */
+html.light .input-glow:focus {
+  border-color: rgba(251, 191, 36, 0.6);
+  box-shadow: 0 0 0 3px rgba(251, 191, 36, 0.15), 0 0 20px rgba(251, 191, 36, 0.08);
+}
+
+/* Timeline */
+html.light .timeline-line {
+  background: linear-gradient(to bottom, transparent, rgba(251, 191, 36, 0.4), rgba(251, 191, 36, 0.6), rgba(251, 191, 36, 0.4), transparent);
+}
+
+/* Swiper */
+html.light .mySwiper .swiper-pagination-bullet {
+  background-color: rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Section divider */
+html.light .section-divider {
+  background: linear-gradient(to right, transparent, rgba(251, 191, 36, 0.4), transparent);
+}
