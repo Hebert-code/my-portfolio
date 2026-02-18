@@ -21,7 +21,7 @@ const ProjectDetails = ({ project, close }) => {
         animate={{ scale: 1, opacity: 1, y: 0 }}
         exit={{ scale: 0.9, opacity: 0, y: 20 }}
         transition={{ type: "spring", stiffness: 300, damping: 30 }}
-        className="glass-card rounded-2xl shadow-2xl max-w-4xl w-full flex flex-col lg:flex-row overflow-hidden"
+        className="glass-card rounded-2xl shadow-2xl max-w-6xl w-full flex flex-col lg:flex-row overflow-hidden"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Image */}
@@ -29,7 +29,7 @@ const ProjectDetails = ({ project, close }) => {
           <img 
             src={project.image} 
             alt={project.title} 
-            className="w-full h-64 lg:h-full object-cover"
+            className="w-full h-80 lg:h-full object-contain bg-black/40"
           />
           <div className={`absolute inset-0 bg-gradient-to-r from-transparent ${isDark ? "to-[#0f172a]/50" : "to-white/50"} hidden lg:block`} />
           <div className={`absolute inset-0 bg-gradient-to-t ${isDark ? "from-[#0f172a]/80" : "from-white/80"} to-transparent lg:hidden`} />

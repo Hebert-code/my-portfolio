@@ -64,9 +64,9 @@ const Home = () => {
         <div id="home" className="scroll-mt-26 relative min-h-screen hero-mesh bg-fundo flex items-center px-6 xl:px-12 pt-20 xl:pt-24 overflow-hidden">
             
             {/* Decorative elements */}
-            <div className="absolute top-20 left-10 w-72 h-72 bg-dourado-texto/5 rounded-full blur-3xl animate-blob" />
-            <div className="absolute bottom-20 right-10 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl animate-blob" style={{ animationDelay: "2s" }} />
-            <div className="absolute top-1/2 left-1/3 w-64 h-64 bg-purple-500/5 rounded-full blur-3xl animate-blob" style={{ animationDelay: "4s" }} />
+            <div className="absolute top-20 left-10 w-72 h-72 bg-dourado-texto/5 rounded-full blur-3xl animate-blob pointer-events-none z-[1]" />
+            <div className="absolute bottom-20 right-10 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl animate-blob pointer-events-none z-[1]" style={{ animationDelay: "2s" }} />
+            <div className="absolute top-1/2 left-1/3 w-64 h-64 bg-purple-500/5 rounded-full blur-3xl animate-blob pointer-events-none z-[1]" style={{ animationDelay: "4s" }} />
             
             <div className="container mx-auto flex flex-col xl:flex-row items-center justify-between relative z-[11] gap-12">
                 

@@ -1,5 +1,10 @@
 import logo_inove from "../assets/img/experiencia/inovejr_logo.jpg";
 import logo_cnpq from "../assets/img/experiencia/cnpq_logo.jpg";
+import logo_cactus from "../assets/img/experiencia/cactus_logo.jpg";
+import logo_horizon from "../assets/img/experiencia/horizon_logo.jpg";
+import logo_fapesb from "../assets/img/experiencia/fapesb_logo.jpg";
+import logo_univasf from "../assets/img/experiencia/univasf_logo.jpg";
+import logo_freelance from "../assets/img/experiencia/freelance_logo.png";
 
 export const experiences = [
   {
@@ -8,7 +13,7 @@ export const experiences = [
     company: "STI – UNIVASF",
     description:
       "Liderança em Engenharia de Requisitos do sistema institucional SGR. Desenvolvimento fullstack com Laravel (back-end) e React (front-end). Gerenciamento de ambientes com Docker.",
-    image: logo_cnpq,
+    image: logo_univasf,
   },
   {
     year: "Set 2025 - Atual",
@@ -16,7 +21,7 @@ export const experiences = [
     company: "FAPESB",
     description:
       "Pesquisa e desenvolvimento de soluções baseadas em LLMs para automação administrativa utilizando técnicas de RAG e Fine-tuning. Construção de interfaces para integração com APIs de IA.",
-    image: logo_cnpq,
+    image: logo_fapesb,
   },
   {
     year: "Mai 2025 - Nov 2025",
@@ -24,7 +29,7 @@ export const experiences = [
     company: "Horizon",
     description:
       "Desenvolvimento mobile em React Native com interfaces responsivas e interativas. Integração com APIs REST e GraphQL. UI/UX padronizada com Styled Components.",
-    image: logo_cnpq,
+    image: logo_horizon,
   },
   {
     year: "Jul 2025 - Ago 2025",
@@ -32,7 +37,7 @@ export const experiences = [
     company: "Sistema de Gestão Odontológica",
     description:
       "Desenvolvimento de sistema web completo para gestão odontológica. Backend em Django, frontend em React + TailwindCSS. Solução implantada e utilizada diariamente pela cliente.",
-    image: logo_cnpq,
+    image: logo_freelance,
   },
   {
     year: "Mai 2025 - Fev 2026",
@@ -40,7 +45,7 @@ export const experiences = [
     company: "Cactus Rockets Design – CRD",
     description:
       "Gestão estratégica com frameworks como Stage-Gate, OKRs e 5W2H para controle de ciclo de vida de projetos e metas de alto impacto.",
-    image: logo_cnpq,
+    image: logo_cactus,
   },
   {
     year: "Mar 2024 - Ago 2025",
